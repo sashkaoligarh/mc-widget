@@ -1,25 +1,41 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import {theme} from './theme/index';
-import {DropDown, Button, MatchCard} from './components';
+import {Header} from './components';
 import {ThemeProvider} from 'styled-components'
-import teamService from './api/teamService';
-import {useDispatch, useSelector} from 'react-redux'
-import { setTeams } from './redux/slices/teamsSlice';
+import addData from './api/addDataService';
+import { useDispatch } from 'react-redux'
+import {
+  setTeams,
+  setPages,
+  setFilters,
+  setStages,
+} from './redux/slices/additionalDataSlice';
 import RootNavigator from './routes';
-
+import { QueryParamProvider } from 'use-query-params';
+import { ReactRouter6Adapter } from 'use-query-params/adapters/react-router-6';
+import { setMatches } from './redux/slices/matchesSlice';
+import matches from './api/matchesService'
 
 
 function App() {
+
   const dispatch = useDispatch()
-  const teams = useSelector((state:any) => state.teams.teams)
   useEffect(() => {
-    dispatch(setTeams(teamService))
+    dispatch(setTeams(addData.teams))
+    dispatch(setPages(addData.pages))
+    dispatch(setFilters(addData.filters))
+    dispatch(setStages(addData.stages))
+    dispatch(setMatches(matches))
   }, [])
+
   return (
-    <ThemeProvider theme={theme}>
-      <RootNavigator/>
-    </ThemeProvider>
+    <QueryParamProvider adapter={ReactRouter6Adapter}>
+      <ThemeProvider theme={theme}>
+        <Header/>
+        <RootNavigator/>
+      </ThemeProvider>
+    </QueryParamProvider>
   );
 }
 

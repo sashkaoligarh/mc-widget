@@ -1,21 +1,26 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import {Button} from './styles'
 import Typography from '../typography'
+
 type ButtonProps = {
   title:string,
   onClick:() => void;
   withArrow?:boolean;
+  isIcon?:boolean;
+  active:boolean;
 }
 
-const StyledButton:FC<ButtonProps> = (props) => {
+const ButtonIcon:FC<ButtonProps> = (props) => {
   const {
     title,
     onClick,
     withArrow,
+    isIcon,
+    active
   } = props
   
   return (
-    <Button onClick={onClick}>
+    <Button active={active} isIcon={isIcon} onClick={onClick}>
       <Typography.BodyLarge1>
         {title}
       </Typography.BodyLarge1>
@@ -23,4 +28,4 @@ const StyledButton:FC<ButtonProps> = (props) => {
   )
 }
 
-export default StyledButton
+export default ButtonIcon
