@@ -49,22 +49,24 @@ export const addInfoSlice = createSlice({
     setMatches: (state, action: PayloadAction<any[]>) => {
       state.matches = action.payload
     },
+    setMatchesView: (state, action: PayloadAction<any>) => {
+      state.matchesToView = state.matches
+      .filter((x:any) => action.payload.matches?.includes(x.id))
+      .filter((x:any) => action.payload.stage === x.stageId)
+    },
+
   },
 })
 
-const filterByStageMatches = () => {
 
-}
-const filterMatches = () => {
-
-}
 
 export const {
   setTeams,
   setPages,
   setFilters,
   setStages,
-  setMatches
+  setMatches,
+  setMatchesView,
  } = addInfoSlice.actions
 
 

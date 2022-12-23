@@ -10,11 +10,11 @@ import {
   setPages,
   setFilters,
   setStages,
+  setMatches
 } from './redux/slices/additionalDataSlice';
 import RootNavigator from './routes';
 import { QueryParamProvider } from 'use-query-params';
 import { ReactRouter6Adapter } from 'use-query-params/adapters/react-router-6';
-import { setMatches } from './redux/slices/matchesSlice';
 import matches from './api/matchesService'
 
 

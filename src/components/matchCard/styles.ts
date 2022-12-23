@@ -56,6 +56,7 @@ export const UpcomingTime = styled(Typography.Label)`
   padding: 2px 4px;
   min-width: 59px;
   height: 16px;
+  /* font-size:34px; */
   background: ${({theme}) => theme.palette.surface.outline};
   color: ${({theme}) => theme.palette.secondary.light};
   border-radius: 2px;

@@ -1,6 +1,7 @@
 import { FC, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { timeConverterMMHHMM, timeConverterHHMMSS } from '../../functions'
+import { useCountdown } from '../../functions/useCountDown'
 import icons from '../../images'
 import { RootState } from '../../redux/store'
 import Typography from '../typography'
@@ -26,6 +27,7 @@ const MatchCard:FC<CardProps> = ({id, team1, team2}) => {
   const match = useSelector((state:RootState) => state.matchesData.matches.find((item:any) => item.id === id))
   const participant1 = useSelector((state:RootState) => state.additionalData.teams.find((item:any) => item.id === team1.id) )
   const participant2 = useSelector((state:RootState) => state.additionalData.teams.find((item:any) => item.id === team2.id) )
+  const timerDown = useCountdown(match.startAt)
 
   return (
     <Container>
@@ -67,7 +69,8 @@ const MatchCard:FC<CardProps> = ({id, team1, team2}) => {
 
       <CardInfoComponent>
         <UpcomingTime>
-          {timeConverterHHMMSS(match.startAt)} 
+          {/* {timeConverterHHMMSS(match.startAt)}  */}
+          {timerDown}
         </UpcomingTime>
         <Typography.BodyLarge2>
         &nbsp;{match.channel}

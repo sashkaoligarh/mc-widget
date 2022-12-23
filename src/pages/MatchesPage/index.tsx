@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, {useEffect, FC} from 'react';
 import {
   Container,
   FilterWrapper,
@@ -6,19 +6,26 @@ import {
   DivisionWrapper,
   MatchesWrapper,
 } from './styles'
-import { Button, DropDown, FilterComponent, MatchCard } from '../../components';
+import { Button, DropDown, FilterComponent } from '../../components';
 import { useQueryParam, StringParam } from 'use-query-params';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 
-const MatchesPage:React.FC = () => {
+import MatchesList from './matchesList'
+const MatchesPage:FC = () => {
   const [stages, setStages] = useQueryParam('stages', StringParam);
   const [division, setDivision] = useQueryParam('division', StringParam);
   const [filter, setFilter] = useQueryParam('filter', StringParam);
-  const state:any = useSelector((state:RootState) => state)
-  console.log('state', state);
+  const state:RootState = useSelector((state:RootState) => state)
+  const filters:any = useSelector((state:RootState) => state.additionalData.filters)
+  const stageList:any = useSelector((state:RootState) => state.additionalData.stages)
+  useEffect(() => {
+    setStages(state.additionalData.stages[0]?.title)
+    setDivision('I')
+    setFilter(state.additionalData.filters.find((item) => item.default === true)?.name)
+  },[filters, stageList])
+
   if(state.additionalData.stages.length === 0) return <></>
-  
   return (
     <Container>
       <FilterWrapper>
@@ -53,15 +60,7 @@ const MatchesPage:React.FC = () => {
           />
         ))}
       </NavWrapper>
-      <MatchesWrapper>
-        {state.matchesData.matches.map((item:any) => (
-          <MatchCard
-            team1={item.teams[0]}
-            team2={item.teams[1]}
-            key={item.id} id={item.id}
-          />
-        ))}
-      </MatchesWrapper>
+      <MatchesList/>
     </Container>
   );
 }
