@@ -1,0 +1,303 @@
+{
+  "id": 10,
+  "tournament": {
+    "title": "ESL Impact League Season 2",
+    "logo": "https://tools.gamelife.org/uploads/league_widget/logo/21/1669305920_Logo__3_.png",
+    "background": "linear-gradient(102.1deg, #0D120B 0%, #1B4114 49.84%, #22B419 100%)",
+    "startOn": "15.12",
+    "endOn": "25.12.22",
+    "prizePool": "$ 123 000",
+    "discipline": {
+      "id": 1,
+      "name": "Counter-Strike: GO",
+      "alias": "CSGO",
+      "primary_squad_size": 5
+    },
+    "teams": [
+      {
+        "id": 2493,
+        "name": "Nigma Galaxy Female",
+        "logo": "https://tools.gamelife.org/uploads/team/logo/2493/large_%D0%9A%D0%BE%D0%BF%D0%B8%D1%8F_Nigma_Galaxy.png"
+      },
+      {
+        "id": 2497,
+        "name": "ATK Fe",
+        "logo": "https://tools.gamelife.org/uploads/team/logo/2497/large_1669451971_ATK.png"
+      },
+      {
+        "id": 2499,
+        "name": "B4 Esports Fe",
+        "logo": "https://tools.gamelife.org/uploads/team/logo/2499/large_1669451957_B4_Esports_w.png"
+      },
+      {
+        "id": 2500,
+        "name": "FURIA Esports Fe",
+        "logo": "https://tools.gamelife.org/uploads/team/logo/2500/large_furia.png"
+      },
+      {
+        "id": 2529,
+        "name": "CLG Red",
+        "logo": "https://tools.gamelife.org/uploads/team/logo/2529/large_1669451908_Counter_Logic_Gaming_Red.png"
+      },
+      {
+        "id": 2532,
+        "name": "Evil Geniuses Fe",
+        "logo": "https://tools.gamelife.org/uploads/team/logo/2532/large_1669452002_Evil_Geniuses_w.png"
+      },
+      {
+        "id": 2545,
+        "name": "HSG Fe",
+        "logo": "https://tools.gamelife.org/uploads/team/logo/2545/large_1669451937_HSG.png"
+      },
+      {
+        "id": 2546,
+        "name": "NOFEAR5",
+        "logo": "https://tools.gamelife.org/uploads/team/logo/2546/large_1669549298_Nofear5-Transparent_1.png"
+      },
+      {
+        "id": -1,
+        "name": "TBD",
+        "logo": "data:image/png;base64,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"
+      }
+    ],
+    "stages": [
+      {
+        "id": 1479,
+        "title": "Groups",
+        "format": [
+          "Two double-elimination format (GSL) Groups\r",
+          "{bo1} Opening & Winners matches\r",
+          "{bo3} Elimination & Decider matches\r",
+          "Top 2 teams {green} Playoffs\r",
+          "Bottom 2 teams {red} Eliminated"
+        ],
+        "startOn": "25.11",
+        "endOn": "27.11.22",
+        "participants": [
+          { "id": 2493, "division": "" },
+          { "id": 2497, "division": "" },
+          { "id": 2499, "division": "" },
+          { "id": 2500, "division": "" },
+          { "id": 2529, "division": "" },
+          { "id": 2532, "division": "" },
+          { "id": 2545, "division": "" },
+          { "id": 2546, "division": "" }
+        ]
+      },
+      {
+        "id": 1480,
+        "title": "Playoffs",
+        "format": ["Single-Elimination bracket\r", "{bo3} All matches"],
+        "startOn": "26.11",
+        "endOn": "27.11.22",
+        "participants": [
+          { "id": 2493, "division": "" },
+          { "id": 2500, "division": "" },
+          { "id": 2545, "division": "" },
+          { "id": 2546, "division": "" }
+        ]
+      }
+    ],
+    "matches": [
+      {
+        "id": 133683,
+        "stageId": 1479,
+        "boType": "bo3",
+        "status": "future",
+        "startAt": "2022-12-22T13:00:00.000Z",
+        "teams": [
+          { "id": 2532, "score": 0, "winner": false },
+          { "id": 2545, "score": 0, "winner": false }
+        ],
+        "channel": "csgo_mc",
+        "title": "Groups / BO3"
+      },
+      {
+        "id": 133684,
+        "stageId": 1479,
+        "boType": "bo3",
+        "status": "future",
+        "startAt": "2022-12-21T20:00:00.000Z",
+        "teams": [
+          { "id": 2529, "score": 0, "winner": false },
+          { "id": 2545, "score": 0, "winner": false }
+        ],
+        "channel": "csgo_mc",
+        "title": "Groups / BO3"
+      },
+      {
+        "id": 133706,
+        "stageId": 1480,
+        "boType": "bo3",
+        "status": "past",
+        "startAt": "2022-11-27T12:30:00.000Z",
+        "teams": [
+          { "id": 2493, "score": 2, "winner": true },
+          { "id": 2546, "score": 0, "winner": false }
+        ],
+        "channel": "csgo_mc",
+        "title": "Playoffs / BO3"
+      },
+      {
+        "id": 133707,
+        "stageId": 1480,
+        "boType": "bo3",
+        "status": "past",
+        "startAt": "2022-11-27T09:00:00.000Z",
+        "teams": [
+          { "id": 2500, "score": 2, "winner": true },
+          { "id": 2545, "score": 0, "winner": false }
+        ],
+        "channel": "csgo_mc",
+        "title": "Playoffs / BO3"
+      },
+      {
+        "id": 133690,
+        "stageId": 1479,
+        "boType": "bo3",
+        "status": "past",
+        "startAt": "2022-11-26T12:30:00.000Z",
+        "teams": [
+          { "id": 2499, "score": 0, "winner": false },
+          { "id": 2546, "score": 2, "winner": true }
+        ],
+        "channel": "csgo_mc",
+        "title": "Groups / BO3"
+      },
+      {
+        "id": 133689,
+        "stageId": 1479,
+        "boType": "bo3",
+        "status": "past",
+        "startAt": "2022-11-25T18:30:00.000Z",
+        "teams": [
+          { "id": 2497, "score": 0, "winner": false },
+          { "id": 2546, "score": 2, "winner": true }
+        ],
+        "channel": "csgo_mc",
+        "title": "Groups / BO3"
+      },
+      {
+        "id": 133688,
+        "stageId": 1479,
+        "boType": "bo1",
+        "status": "past",
+        "startAt": "2022-11-25T16:50:00.000Z",
+        "teams": [
+          { "id": 2500, "score": 1, "winner": true },
+          { "id": 2499, "score": 0, "winner": false }
+        ],
+        "channel": "csgo_mc",
+        "title": "Groups / BO1"
+      },
+      {
+        "id": 133682,
+        "stageId": 1479,
+        "boType": "bo1",
+        "status": "past",
+        "startAt": "2022-11-25T15:10:00.000Z",
+        "teams": [
+          { "id": 2493, "score": 1, "winner": true },
+          { "id": 2529, "score": 0, "winner": false }
+        ],
+        "channel": "csgo_mc",
+        "title": "Groups / BO1"
+      },
+      {
+        "id": 133687,
+        "stageId": 1479,
+        "boType": "bo1",
+        "status": "past",
+        "startAt": "2022-11-25T13:30:00.000Z",
+        "teams": [
+          { "id": 2499, "score": 1, "winner": true },
+          { "id": 2497, "score": 0, "winner": false }
+        ],
+        "channel": "csgo_mc",
+        "title": "Groups / BO1"
+      },
+      {
+        "id": 133686,
+        "stageId": 1479,
+        "boType": "bo1",
+        "status": "past",
+        "startAt": "2022-11-25T11:50:00.000Z",
+        "teams": [
+          { "id": 2500, "score": 1, "winner": true },
+          { "id": 2546, "score": 0, "winner": false }
+        ],
+        "channel": "csgo_mc",
+        "title": "Groups / BO1"
+      },
+      {
+        "id": 133681,
+        "stageId": 1479,
+        "boType": "bo1",
+        "status": "past",
+        "startAt": "2022-11-25T10:10:00.000Z",
+        "teams": [
+          { "id": 2529, "score": 1, "winner": true },
+          { "id": 2532, "score": 0, "winner": false }
+        ],
+        "channel": "csgo_mc",
+        "title": "Groups / BO1"
+      },
+      {
+        "id": 133680,
+        "stageId": 1479,
+        "boType": "bo1",
+        "status": "past",
+        "startAt": "2022-11-25T08:30:00.000Z",
+        "teams": [
+          { "id": 2493, "score": 1, "winner": true },
+          { "id": 2545, "score": 0, "winner": false }
+        ],
+        "channel": "csgo_mc",
+        "title": "Groups / BO1"
+      }
+    ],
+    "id": 308,
+    "filters": [
+      {
+        "name": "today",
+        "title": "Today",
+        "default": true,
+        "hints": {
+          "noMatches": {
+            "title": "NO MATCHES",
+            "description": "There are no matches in this tab, but you can always look in others!"
+          }
+        },
+        "matches": [133683]
+      },
+      {
+        "name": "results",
+        "title": "Results",
+        "default": false,
+        "hints": {
+            "noMatches": {
+              "title": "NO MATCHES",
+              "description": "There are no matches in this tab, but you can always look in others!"
+            }
+        },
+        "matches": [
+          133684, 133706, 133707, 133690, 133689, 133688, 133682, 133687,
+          133686, 133681, 133680
+        ]
+      },
+      {
+        "name": "upcoming",
+        "title": "Upcoming",
+        "default": false,
+        "hints": {
+            "noMatches": {
+              "title": "NO MATCHES",
+              "description": "There are no matches in this tab, but you can always look in others!"
+            }
+        },
+        "matches": []
+      }
+    ]
+  },
+  "pages": [{ "name": "matches" }, { "name": "info_stages" }]
+}

@@ -1,25 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect } from 'react';
 import './App.css';
+import {theme} from './theme/index';
+import {DropDown, Button, MatchCard} from './components';
+import {ThemeProvider} from 'styled-components'
+import teamService from './api/teamService';
+import {useDispatch, useSelector} from 'react-redux'
+import { setTeams } from './redux/slices/teamsSlice';
+import RootNavigator from './routes';
+
+
 
 function App() {
+  const dispatch = useDispatch()
+  const teams = useSelector((state:any) => state.teams.teams)
+  useEffect(() => {
+    dispatch(setTeams(teamService))
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <RootNavigator/>
+    </ThemeProvider>
   );
 }
 
