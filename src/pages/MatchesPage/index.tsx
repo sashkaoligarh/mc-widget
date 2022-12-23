@@ -3,19 +3,22 @@ import {
   Container,
   FilterWrapper,
   NavWrapper,
-  DivisionWrapper
+  DivisionWrapper,
+  MatchesWrapper,
 } from './styles'
 import { Button, DropDown, FilterComponent, MatchCard } from '../../components';
 import { useQueryParam, StringParam } from 'use-query-params';
 import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
 
 const MatchesPage:React.FC = () => {
   const [stages, setStages] = useQueryParam('stages', StringParam);
   const [division, setDivision] = useQueryParam('division', StringParam);
   const [filter, setFilter] = useQueryParam('filter', StringParam);
-  const state:any = useSelector(state => state)
+  const state:any = useSelector((state:RootState) => state)
   console.log('state', state);
   if(state.additionalData.stages.length === 0) return <></>
+  
   return (
     <Container>
       <FilterWrapper>
@@ -27,8 +30,8 @@ const MatchesPage:React.FC = () => {
           />
         </FilterComponent>
         <FilterComponent title={'Division'}>
-          {state.additionalData.division.map((item:any) => (
-            <DivisionWrapper>
+          <DivisionWrapper>
+            {state.additionalData.division.map((item:any) => (
               <Button
                 key={item.id}
                 onClick={() => setDivision(item.name)}
@@ -36,8 +39,8 @@ const MatchesPage:React.FC = () => {
                 isIcon={true}
                 active={division === item.name}
               />
-            </DivisionWrapper>
-          ))}
+            ))}
+          </DivisionWrapper>
         </FilterComponent>
       </FilterWrapper>
       <NavWrapper>
@@ -50,6 +53,15 @@ const MatchesPage:React.FC = () => {
           />
         ))}
       </NavWrapper>
+      <MatchesWrapper>
+        {state.matchesData.matches.map((item:any) => (
+          <MatchCard
+            team1={item.teams[0]}
+            team2={item.teams[1]}
+            key={item.id} id={item.id}
+          />
+        ))}
+      </MatchesWrapper>
     </Container>
   );
 }

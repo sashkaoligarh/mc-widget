@@ -7,6 +7,8 @@ interface DataState {
   pages:any[];
   stages:any[];
   division:any[];
+  matches: any[];
+  matchesToView:any[];
 }
 
 const initialState: DataState = {
@@ -24,6 +26,8 @@ const initialState: DataState = {
       name:'II'
     }
   ],
+  matches: [],
+  matchesToView:[],
 }
 
 export const addInfoSlice = createSlice({
@@ -42,14 +46,25 @@ export const addInfoSlice = createSlice({
     setStages: (state, action: PayloadAction<any[]>) => {
       state.stages = action.payload
     },
+    setMatches: (state, action: PayloadAction<any[]>) => {
+      state.matches = action.payload
+    },
   },
 })
+
+const filterByStageMatches = () => {
+
+}
+const filterMatches = () => {
+
+}
 
 export const {
   setTeams,
   setPages,
   setFilters,
   setStages,
+  setMatches
  } = addInfoSlice.actions
 
 

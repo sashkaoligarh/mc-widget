@@ -3,10 +3,12 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 
 interface MatchesState {
   matches: any[];
+  matchesToView:any[];
 }
 
 const initialState: MatchesState = {
   matches: [],
+  matchesToView:[],
 }
 
 export const teamSlice = createSlice({
@@ -16,6 +18,9 @@ export const teamSlice = createSlice({
     setMatches: (state, action: PayloadAction<any[]>) => {
       state.matches = action.payload
     },
+    // setWithFilters: (state, action: PayloadAction<any[]>) => {
+    //   state.matchesToView = 
+    // }
   },
 })
 
