@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import palette from '../../theme/palette'
-
+import { Typography } from '../../components'
 
 export const Container = styled.div`
   box-sizing: border-box;
@@ -13,7 +12,6 @@ export const Container = styled.div`
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
-
   ::-webkit-scrollbar {
     width: 6px;
   }
@@ -44,18 +42,59 @@ export const NavWrapper = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   margin-top: 24px;
-  margin-bottom: 24px;
 `
 export const DivisionWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width:100%;
+  margin-left: 12px;
 `
 
 export const MatchesWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 24px;
+`
+export const NoDataWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 56px;
+  position: relative;
+`
+export const NoDataImg = styled.img`
   
+`
+
+export const NoDataInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 138px;
+  height: 112px;
+  position: absolute;
+`
+
+export const NoDataHeader = styled(Typography.HeadlineLarge)`
+  text-align: center;
+  box-sizing: border-box;
+  width: 138px;
+  height: 32px;
+  background-color: ${({theme}) => theme.palette.surface.onBackground};
+  border-radius: 4px 4px 0px 0px;
+  color:${({theme}) => theme.palette.secondary.main};
+  padding: 4px 16px;
+`
+
+export const NoDataBody = styled(Typography.BodyLarge2)`
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px solid ${({theme}) => theme.palette.surface.onBackground};
+  padding: 8px;
+  width: 138px;
+  height: 80px;
+  background-color: ${({theme}) => theme.palette.surface.background};
+  border-radius: 0px 0px 4px 4px;
+  color:${({theme}) => theme.palette.secondary.dark};
 
 `

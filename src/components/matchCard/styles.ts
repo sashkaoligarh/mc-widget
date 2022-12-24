@@ -53,6 +53,7 @@ export const Score = styled.div<ScoreProps>`
   margin: 0 12px 0 12px;
 `
 export const UpcomingTime = styled(Typography.Label)`
+  box-sizing: border-box;
   padding: 2px 4px;
   min-width: 59px;
   height: 16px;
@@ -63,4 +64,13 @@ export const UpcomingTime = styled(Typography.Label)`
   display: flex;
   justify-content: center;
   align-items: center;
+`
+export const LiveBox = styled(Typography.Label)`
+  box-sizing: border-box;
+  padding: 2px 4px;
+  width: 27px;
+  height: 16px;
+  background-color: ${({theme}) => theme.palette.primary.enabled};
+  border-radius: 2px;
+  color: ${({theme}) => theme.palette.secondary.light};
 `

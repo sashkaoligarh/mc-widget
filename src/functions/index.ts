@@ -39,3 +39,12 @@ export const  timeConverterHHMMSS = (timestamp:any) => {
     }s
   `
 }
+
+export const checkActiveCountDown = (dateIn:any) => {
+  const dateNow:any = new Date()
+  const dateTo:any = Date.parse(dateIn)
+  const newDateTo:any = new Date(dateTo)
+  const dayMilliseconds = 12*60*60*1000;
+  const toCheck:any = newDateTo - dayMilliseconds
+  return toCheck > dateNow 
+}

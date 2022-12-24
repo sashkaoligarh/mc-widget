@@ -116,7 +116,7 @@
         "id": 133684,
         "stageId": 1479,
         "boType": "bo3",
-        "status": "future",
+        "status": "past",
         "startAt": "2022-12-21T20:00:00.000Z",
         "teams": [
           { "id": 2529, "score": 0, "winner": false },
@@ -129,7 +129,7 @@
         "id": 133706,
         "stageId": 1480,
         "boType": "bo3",
-        "status": "past",
+        "status": "live",
         "startAt": "2022-11-27T12:30:00.000Z",
         "teams": [
           { "id": 2493, "score": 2, "winner": true },

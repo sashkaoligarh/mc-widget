@@ -37,8 +37,8 @@ const MatchesPage:FC = () => {
           />
         </FilterComponent>
         <FilterComponent title={'Division'}>
-          <DivisionWrapper>
-            {state.additionalData.division.map((item:any) => (
+          {state.additionalData.division.map((item:any) => (
+            <DivisionWrapper>
               <Button
                 key={item.id}
                 onClick={() => setDivision(item.name)}
@@ -46,8 +46,8 @@ const MatchesPage:FC = () => {
                 isIcon={true}
                 active={division === item.name}
               />
-            ))}
-          </DivisionWrapper>
+            </DivisionWrapper>
+          ))}
         </FilterComponent>
       </FilterWrapper>
       <NavWrapper>

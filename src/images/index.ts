@@ -4,13 +4,15 @@ import ArrowDown from './IconDown.svg'
 import ArrowRight from './Icon-arrow_right.svg'
 import LogoMainCast from './Logo-Maincast.svg'
 import CloseIcon from './Icon-Close.svg'
+import NoDataIcon from './oops.svg'
 const icons = {
   IconVs,
   ArrowUp,
   ArrowDown,
   ArrowRight,
   LogoMainCast,
-  CloseIcon
+  CloseIcon,
+  NoDataIcon,
 }
 
 export default icons

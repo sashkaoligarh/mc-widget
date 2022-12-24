@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { timeConverterMMHHMM, timeConverterHHMMSS } from '../../functions'
+import { timeConverterMMHHMM, checkActiveCountDown } from '../../functions'
 import { useCountdown } from '../../functions/useCountDown'
 import icons from '../../images'
 import { RootState } from '../../redux/store'
@@ -14,7 +14,8 @@ import {
   LogoImg,
   Score,
   ParticipantTitle,
-  UpcomingTime
+  UpcomingTime,
+  LiveBox
 } from './styles'
 
 type CardProps = {
@@ -28,7 +29,7 @@ const MatchCard:FC<CardProps> = ({id, team1, team2}) => {
   const participant1 = useSelector((state:RootState) => state.additionalData.teams.find((item:any) => item.id === team1.id) )
   const participant2 = useSelector((state:RootState) => state.additionalData.teams.find((item:any) => item.id === team2.id) )
   const timerDown = useCountdown(match.startAt)
-
+  
   return (
     <Container>
       <CardInfoTopComponent>
@@ -68,16 +69,47 @@ const MatchCard:FC<CardProps> = ({id, team1, team2}) => {
 
 
       <CardInfoComponent>
-        <UpcomingTime>
-          {/* {timeConverterHHMMSS(match.startAt)}  */}
-          {timerDown}
-        </UpcomingTime>
-        <Typography.BodyLarge2>
-        &nbsp;{match.channel}
-        </Typography.BodyLarge2>
-        {/* <Typography.BodyLarge2>
-          {timeConverterMMHHMM(match.startAt)} / {match.channel}
-        </Typography.BodyLarge2> */}
+        {match.status === 'live' ? 
+          <>
+            <LiveBox>
+              LIVE
+            </LiveBox>
+            <Typography.BodyLarge2>
+              &nbsp;{match.channel}
+            </Typography.BodyLarge2>
+          </>
+        :
+          null
+        }
+        {match.status === 'future' ? 
+          <>
+            {checkActiveCountDown(match.startAt) ? 
+            <Typography.BodyLarge2>
+            {timeConverterMMHHMM(match.startAt)}&nbsp; / 
+            &nbsp;{match.channel}
+          </Typography.BodyLarge2>
+            :
+
+            <UpcomingTime>
+
+              {timerDown}
+            </UpcomingTime>
+            }
+            <Typography.BodyLarge2>
+              &nbsp;{match.channel}
+            </Typography.BodyLarge2>
+          </>
+        :
+          null
+        }
+        {match.status === 'past' ? 
+          <Typography.BodyLarge2>
+            {timeConverterMMHHMM(match.startAt)}&nbsp; / 
+            &nbsp;{match.channel}
+          </Typography.BodyLarge2>
+        :
+          null
+        }
       </CardInfoComponent>
     </Container>
   )
