@@ -24,13 +24,13 @@ const useCountdown = (targetDate:any) => {
     );
     const minutes = Math.floor((countDown % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((countDown % (1000 * 60)) / 1000);
-
+    
     return  `
-    ${hours.toString().length > 1 ? hours : 0 + hours.toString()}
+    ${hours.toString().length > 1 ? hours : 0 + hours.toString()}h
     :
-    ${minutes.toString().length > 1 ? minutes : 0 + minutes.toString()}
+    ${minutes.toString().length > 1 ? minutes : 0 + minutes.toString()}m
     : 
-    ${seconds.toString().length > 1 ? seconds : 0 + seconds.toString()}`;
+    ${seconds.toString().length > 1 ? seconds : 0 + seconds.toString()}s`;
   };
 
 export { useCountdown };

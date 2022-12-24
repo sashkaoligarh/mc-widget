@@ -55,7 +55,7 @@ export const Score = styled.div<ScoreProps>`
 export const UpcomingTime = styled(Typography.Label)`
   box-sizing: border-box;
   padding: 2px 4px;
-  min-width: 59px;
+  width: 72px;
   height: 16px;
   /* font-size:34px; */
   background: ${({theme}) => theme.palette.surface.outline};

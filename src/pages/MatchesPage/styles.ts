@@ -98,3 +98,15 @@ export const NoDataBody = styled(Typography.BodyLarge2)`
   color:${({theme}) => theme.palette.secondary.dark};
 
 `
+
+export const DifferenceMonthComponent = styled(Typography.BodyLarge1)`
+  color:${({theme}) => theme.palette.secondary.dark};
+  margin:20px 0 20px 0;
+
+`
+
+export const DifferenceMonthWrappper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  `

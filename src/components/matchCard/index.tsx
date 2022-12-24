@@ -31,7 +31,7 @@ const MatchCard:FC<CardProps> = ({id, team1, team2}) => {
   const timerDown = useCountdown(match.startAt)
   
   return (
-    <Container>
+    <Container key={id}>
       <CardInfoTopComponent>
         <Typography.BodyLarge2>
           {match.title}
@@ -84,14 +84,12 @@ const MatchCard:FC<CardProps> = ({id, team1, team2}) => {
         {match.status === 'future' ? 
           <>
             {checkActiveCountDown(match.startAt) ? 
-            <Typography.BodyLarge2>
-            {timeConverterMMHHMM(match.startAt)}&nbsp; / 
-            &nbsp;{match.channel}
-          </Typography.BodyLarge2>
+              <Typography.BodyLarge2>
+                {timeConverterMMHHMM(match.startAt)}&nbsp; / 
+                &nbsp;{match.channel}
+              </Typography.BodyLarge2>
             :
-
             <UpcomingTime>
-
               {timerDown}
             </UpcomingTime>
             }

@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {MatchCard} from '../../components'
+import {MatchCard, Typography} from '../../components'
 import {
   MatchesWrapper,
   NoDataWrapper,
@@ -7,12 +7,15 @@ import {
   NoDataInfo,
   NoDataHeader,
   NoDataBody,
+  DifferenceMonthComponent,
+  DifferenceMonthWrappper,
 } from './styles'
 import {useSelector, useDispatch} from 'react-redux'
 import { RootState } from '../../redux/store';
 import { useQueryParam, StringParam } from 'use-query-params';
 import { setMatchesView } from '../../redux/slices/additionalDataSlice';
 import icons from '../../images';
+import { checkDifferenceMonth, checkDifferenceWeek} from '../../functions';
 
 const MatchesList = () => {
   const dispatch = useDispatch()
@@ -20,6 +23,7 @@ const MatchesList = () => {
   const [stages, setStages] = useQueryParam('stages', StringParam);
   const [filter, setFilter] = useQueryParam('filter', StringParam);
   const state = useSelector((state:RootState) => state)
+  const matches = useSelector((state:RootState) => state.additionalData.matchesToView) 
   
   useEffect(() => {
     if(stages && filter) {
@@ -28,13 +32,37 @@ const MatchesList = () => {
       dispatch(setMatchesView({stage:stage.id, matches}))
     }
   },[stages, filter])
-  console.log('matches', state.additionalData);
+
+  const differenceMonth = (item1:any, item2:any) => {
+    return (
+      <>
+        {checkDifferenceMonth(item1, item2) ? 
+          <DifferenceMonthWrappper>
+            <DifferenceMonthComponent>
+              {checkDifferenceMonth(item1, item2)}
+              {/* 00 Month / Week 0 */}
+            </DifferenceMonthComponent>
+          </DifferenceMonthWrappper>
+        : 
+          checkDifferenceWeek(item1, item2)  ? 
+            <DifferenceMonthWrappper>
+              <DifferenceMonthComponent>
+                {checkDifferenceWeek(item1, item2)}
+              </DifferenceMonthComponent>
+            </DifferenceMonthWrappper>
+          :
+            null 
+        }
+      </>
+    )
+  }
+
   if(loading) return (
     <>
-    
+      
     </>
   )
-  if (state.additionalData.matchesToView.length === 0) return (
+  if (matches.length === 0) return (
     <NoDataWrapper>
       <NoDataImg src={icons.NoDataIcon}/>
       <NoDataInfo>
@@ -52,12 +80,20 @@ const MatchesList = () => {
   )
   return ( 
     <MatchesWrapper>
-      {state.additionalData.matchesToView.map((item:any) => (
-        <MatchCard
-          team1={item.teams[0]}
-          team2={item.teams[1]}
-          key={item.id} id={item.id}
-        />
+      {matches.map((item:any, index:any) => (
+        <div style={{width:'100%'}} key={item.id} >
+          {
+            differenceMonth(
+              matches?.[index]?.startAt,
+              matches?.[0]?.startAt
+            )
+          }
+          <MatchCard
+            team1={item.teams[0]}
+            team2={item.teams[1]}
+            id={item.id}
+          />
+        </div>
       ))}
     </MatchesWrapper>
    );
