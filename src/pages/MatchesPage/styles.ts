@@ -102,7 +102,7 @@ export const NoDataBody = styled(Typography.BodyLarge2)`
 export const DifferenceMonthComponent = styled(Typography.BodyLarge1)`
   color:${({theme}) => theme.palette.secondary.dark};
   margin:20px 0 20px 0;
-
+  text-transform: capitalize;
 `
 
 export const DifferenceMonthWrappper = styled.div`

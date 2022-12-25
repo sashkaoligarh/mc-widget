@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {MatchCard, Typography} from '../../components'
+import {MatchCard} from '../../components'
 import {
   MatchesWrapper,
   NoDataWrapper,
@@ -15,7 +15,8 @@ import { RootState } from '../../redux/store';
 import { useQueryParam, StringParam } from 'use-query-params';
 import { setMatchesView } from '../../redux/slices/additionalDataSlice';
 import icons from '../../images';
-import { checkDifferenceMonth, checkDifferenceWeek} from '../../functions';
+import { DateTime, Interval } from "luxon";
+import humanizeDuration from "humanize-duration"
 
 const MatchesList = () => {
   const dispatch = useDispatch()
@@ -33,25 +34,24 @@ const MatchesList = () => {
     }
   },[stages, filter])
 
-  const differenceMonth = (item1:any, item2:any) => {
+  const differenceMonth = (item1:any) => {
+    const start = new Date()
+    const finish = DateTime.fromISO(item1);
+    const weekMilliseconds = 7*24*60*60*1000;
+    const formatted = Interval
+    .fromDateTimes(start, finish)
+    .toDuration()
+    .valueOf()
     return (
       <>
-        {checkDifferenceMonth(item1, item2) ? 
+        {formatted > weekMilliseconds ? 
           <DifferenceMonthWrappper>
             <DifferenceMonthComponent>
-              {checkDifferenceMonth(item1, item2)}
-              {/* 00 Month / Week 0 */}
+              {humanizeDuration(formatted, { largest: 2 })}
             </DifferenceMonthComponent>
           </DifferenceMonthWrappper>
         : 
-          checkDifferenceWeek(item1, item2)  ? 
-            <DifferenceMonthWrappper>
-              <DifferenceMonthComponent>
-                {checkDifferenceWeek(item1, item2)}
-              </DifferenceMonthComponent>
-            </DifferenceMonthWrappper>
-          :
-            null 
+          null 
         }
       </>
     )
@@ -83,10 +83,7 @@ const MatchesList = () => {
       {matches.map((item:any, index:any) => (
         <div style={{width:'100%'}} key={item.id} >
           {
-            differenceMonth(
-              matches?.[index]?.startAt,
-              matches?.[0]?.startAt
-            )
+            differenceMonth(matches?.[index]?.startAt)
           }
           <MatchCard
             team1={item.teams[0]}

@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { timeConverterMMHHMM, checkActiveCountDown } from '../../functions'
+import { timeConverterMMHHMM } from '../../functions'
 import { useCountdown } from '../../functions/useCountDown'
 import icons from '../../images'
 import { RootState } from '../../redux/store'
@@ -17,6 +17,8 @@ import {
   UpcomingTime,
   LiveBox
 } from './styles'
+import { DateTime, Interval } from "luxon";
+import humanizeDuration from "humanize-duration"
 
 type CardProps = {
   id:number,
@@ -29,7 +31,16 @@ const MatchCard:FC<CardProps> = ({id, team1, team2}) => {
   const participant1 = useSelector((state:RootState) => state.additionalData.teams.find((item:any) => item.id === team1.id) )
   const participant2 = useSelector((state:RootState) => state.additionalData.teams.find((item:any) => item.id === team2.id) )
   const timerDown = useCountdown(match.startAt)
-  
+  const checkActiveCountDown = (dateIn:any) => {
+    const start = new Date()
+    const finish = DateTime.fromISO(dateIn);
+    const dayMilliseconds = 12*60*60*1000;
+    const formatted = Interval
+    .fromDateTimes(start, finish)
+    .toDuration()
+    .valueOf()
+    return formatted > dayMilliseconds 
+  }
   return (
     <Container key={id}>
       <CardInfoTopComponent>
