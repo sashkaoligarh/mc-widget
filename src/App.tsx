@@ -10,7 +10,6 @@ import {
   setPages,
   setFilters,
   setStages,
-  setMatches
 } from './redux/slices/additionalDataSlice';
 import RootNavigator from './routes';
 import { QueryParamProvider } from 'use-query-params';
@@ -26,7 +25,6 @@ function App() {
     dispatch(setPages(addData.pages))
     dispatch(setFilters(addData.filters))
     dispatch(setStages(addData.stages))
-    dispatch(setMatches(matches))
   }, [])
 
   return (

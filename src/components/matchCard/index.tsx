@@ -56,7 +56,11 @@ const MatchCard:FC<CardProps> = ({id, team1, team2}) => {
           <ParticipantTitle style={{textAlign:'right'}}>
             {participant1.name}
           </ParticipantTitle>
-          <LogoImg src={participant1.logo}/>
+          {participant1.logo ? 
+            <LogoImg src={participant1.logo}/>
+          :
+            <LogoImg src={icons.NoTeamImageCsGo}/>
+          }
           <Score status={true}>
             <Typography.HeadlineLarge>
               {team1.score}
@@ -70,7 +74,11 @@ const MatchCard:FC<CardProps> = ({id, team1, team2}) => {
               {team2.score}
             </Typography.HeadlineLarge>
           </Score>
-          <LogoImg src={participant2.logo}/>
+          {participant1.logo ? 
+            <LogoImg src={participant2.logo}/>
+          :
+            <LogoImg src={icons.NoTeamImageCsGo}/>
+          }
           <ParticipantTitle>
             {participant2.name}
           </ParticipantTitle>

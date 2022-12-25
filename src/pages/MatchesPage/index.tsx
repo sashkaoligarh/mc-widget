@@ -4,15 +4,17 @@ import {
   FilterWrapper,
   NavWrapper,
   DivisionWrapper,
-  MatchesWrapper,
 } from './styles'
 import { Button, DropDown, FilterComponent } from '../../components';
 import { useQueryParam, StringParam } from 'use-query-params';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
-
+import {setMatches} from '../../redux/slices/matchesSlice'
 import MatchesList from './matchesList'
+import getMatchesWithFilter from '../../api/matchesService';
+
 const MatchesPage:FC = () => {
+  const dispatch = useDispatch()
   const [stages, setStages] = useQueryParam('stages', StringParam);
   const [division, setDivision] = useQueryParam('division', StringParam);
   const [filter, setFilter] = useQueryParam('filter', StringParam);
@@ -24,6 +26,21 @@ const MatchesPage:FC = () => {
     setDivision('I')
     setFilter(state.additionalData.filters.find((item) => item.default === true)?.name)
   },[filters, stageList])
+
+  useEffect(() => {
+    if(stages && filter) {
+      let stage = state.additionalData.stages.find((item:any) => item.title === stages)
+      let matches = state.additionalData.filters.find((item:any) => item.name === filter)?.matches
+      getMatchesWithFilter({stage:stage?.id, matches})
+      .then((res) => {
+        dispatch(setMatches(res))
+      })
+      .catch((e) => {
+        console.log('error get matches', e);
+      })
+      
+    }
+  },[stages, filter])
 
   if(state.additionalData.stages.length === 0) return <></>
   return (
@@ -38,9 +55,8 @@ const MatchesPage:FC = () => {
         </FilterComponent>
         <FilterComponent title={'Division'}>
           {state.additionalData.division.map((item:any) => (
-            <DivisionWrapper>
+            <DivisionWrapper key={item.id}>
               <Button
-                key={item.id}
                 onClick={() => setDivision(item.name)}
                 title={item.name}
                 isIcon={true}

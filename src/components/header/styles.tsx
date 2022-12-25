@@ -24,11 +24,11 @@ export const NavWrapper = styled.div`
   margin-top: 25px;
   display: flex;
   flex-direction: row;
-  padding: 8px;
+  padding: 8px 0 8px 0;
   height: 48px;
   width: 100%;
   background-color: ${({theme}) => theme.palette.surface.background};
-  justify-content: space-around;
+  justify-content: space-evenly;
   box-sizing: border-box;
 `
 export const NavComponent = styled.div<NavComponentProps>`
@@ -37,6 +37,7 @@ export const NavComponent = styled.div<NavComponentProps>`
   border-radius: 100px;
   height: 32px;
   width:100%;
+  margin: 0 8px 0 8px;
   display:flex;
   justify-content: center;
   align-items: center;

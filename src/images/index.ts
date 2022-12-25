@@ -5,6 +5,8 @@ import ArrowRight from './Icon-arrow_right.svg'
 import LogoMainCast from './Logo-Maincast.svg'
 import CloseIcon from './Icon-Close.svg'
 import NoDataIcon from './oops.svg'
+import NoTeamImageDota  from './Logo-DOTA_big.svg'
+import NoTeamImageCsGo  from './Logo-CSGO_big.svg'
 const icons = {
   IconVs,
   ArrowUp,
@@ -13,6 +15,8 @@ const icons = {
   LogoMainCast,
   CloseIcon,
   NoDataIcon,
+  NoTeamImageDota,
+  NoTeamImageCsGo,
 }
 
 export default icons

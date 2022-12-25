@@ -11,6 +11,7 @@ const RootNavigator:FC = () => {
       <Route path="/info_stages" element={<InfoPage />}></Route>
       <Route path="/matches" element={<MatchesPage />}></Route>
     </Routes>
+
   );
 };
 

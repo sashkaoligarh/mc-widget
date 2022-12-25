@@ -301,5 +301,5 @@
       }
     ]
   },
-  "pages": [{ "name": "matches" }, { "name": "info_stages" }]
+  "pages": [{ "name": "matches", "title": "Matches" }, { "name": "info_stages", "title": "Info" }]
 }
