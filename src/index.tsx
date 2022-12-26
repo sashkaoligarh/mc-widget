@@ -6,19 +6,20 @@ import reportWebVitals from './reportWebVitals';
 import { store } from './redux/store'
 import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom';
-import styled from 'styled-components'
-
+import {HashRouter} from 'react-router-dom';
 
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
+  <HashRouter >
     <Provider store={store}>
-      <BrowserRouter>
+      {/* <BrowserRouter> */}
         <App />
-      </BrowserRouter>
+      {/* </BrowserRouter> */}
     </Provider>
+  </HashRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -17,13 +17,7 @@ import { QueryParamProvider } from 'use-query-params';
 import { ReactRouter6Adapter } from 'use-query-params/adapters/react-router-6';
 import styled from 'styled-components'
 
-
-type Props = {
-  scale?:any,
-  height?:any,
-  width?:any,
-}
-const StyledRoot = styled.div<Props>`
+const StyledRoot = styled.div`
   box-sizing: border-box;
   width:100vw;
   height: 100%;
