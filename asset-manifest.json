@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/mc-widget/static/css/main.c9f61e63.css",
-    "main.js": "/mc-widget/static/js/main.2b3b6465.js",
+    "main.js": "/mc-widget/static/js/main.e1b73506.js",
     "static/js/787.721d54f7.chunk.js": "/mc-widget/static/js/787.721d54f7.chunk.js",
     "static/media/oops.svg": "/mc-widget/static/media/oops.f9198e7926046fb3ea4703600215b375.svg",
     "static/media/Logo-DOTA_big.svg": "/mc-widget/static/media/Logo-DOTA_big.61856ac9d684c1adf8d4b396237c0b74.svg",
@@ -15,11 +15,11 @@
     "static/media/IconDown.svg": "/mc-widget/static/media/IconDown.53c5e6b9360f70f2f9a30faecf9a71ab.svg",
     "static/media/missingTeam.svg": "/mc-widget/static/media/missingTeam.189979c93c4fe0886558c0e4c83331e7.svg",
     "main.c9f61e63.css.map": "/mc-widget/static/css/main.c9f61e63.css.map",
-    "main.2b3b6465.js.map": "/mc-widget/static/js/main.2b3b6465.js.map",
+    "main.e1b73506.js.map": "/mc-widget/static/js/main.e1b73506.js.map",
     "787.721d54f7.chunk.js.map": "/mc-widget/static/js/787.721d54f7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c9f61e63.css",
-    "static/js/main.2b3b6465.js"
+    "static/js/main.e1b73506.js"
   ]
 }
