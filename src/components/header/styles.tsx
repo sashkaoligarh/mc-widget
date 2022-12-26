@@ -31,6 +31,11 @@ export const NavWrapper = styled.div`
   justify-content: space-evenly;
   box-sizing: border-box;
 `
+export const Close = styled.img`
+  &:hover{
+      cursor: pointer;
+  }
+`
 export const NavComponent = styled.div<NavComponentProps>`
   color: ${({active, theme}) => active ? theme.palette.secondary.light : theme.palette.secondary.main};
   background-color: ${({active, theme}) => active ? theme.palette.surface.onBackground : 'none'};
@@ -43,5 +48,6 @@ export const NavComponent = styled.div<NavComponentProps>`
   align-items: center;
   &:hover{
     cursor: pointer;
+    color: ${({theme}) => theme.palette.secondary.light};
   }
 `

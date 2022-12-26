@@ -9,6 +9,7 @@ import {
   TopComponent,
   NavWrapper,
   NavComponent,
+  Close,
 } from './styles'
 
 
@@ -21,7 +22,7 @@ const Header:React.FC = () => {
     <Container>
       <TopComponent>
         <img src={icons.LogoMainCast}/>
-        <img src={icons.CloseIcon}/>
+        <Close src={icons.CloseIcon}/>
       </TopComponent>
       <NavWrapper>
         {pages.map((item) => (

@@ -21,6 +21,7 @@ export const DropDown = styled.div<DropDownProps>`
   &:hover{
     cursor: pointer;
     color: ${({theme}) => theme.palette.secondary.light};
+    /* background-color: ${({theme}) => theme.palette.surface.outline}; */
   }
 `
 
@@ -43,5 +44,6 @@ export const Option = styled.div`
   padding: 10px 24px;
   &:hover{
     cursor: pointer;
+    background-color: ${({theme}) => theme.palette.surface.outline};
   }
 `

@@ -7,6 +7,7 @@ interface DataState {
   pages:any[];
   stages:any[];
   division:any[];
+  tournament:any;
 }
 
 const initialState: DataState = {
@@ -24,7 +25,7 @@ const initialState: DataState = {
       name:'II'
     }
   ],
-
+  tournament:null,
 }
 
 export const addInfoSlice = createSlice({
@@ -43,6 +44,9 @@ export const addInfoSlice = createSlice({
     setStages: (state, action: PayloadAction<any[]>) => {
       state.stages = action.payload
     },
+    setTournament: (state, action: PayloadAction<any>) => {
+      state.tournament = action.payload
+    }
   },
 })
 
@@ -53,6 +57,7 @@ export const {
   setPages,
   setFilters,
   setStages,
+  setTournament
  } = addInfoSlice.actions
 
 

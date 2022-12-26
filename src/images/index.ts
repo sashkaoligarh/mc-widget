@@ -7,6 +7,8 @@ import CloseIcon from './Icon-Close.svg'
 import NoDataIcon from './oops.svg'
 import NoTeamImageDota  from './Logo-DOTA_big.svg'
 import NoTeamImageCsGo  from './Logo-CSGO_big.svg'
+import MissingIcon from './missingTeam.svg'
+
 const icons = {
   IconVs,
   ArrowUp,
@@ -17,6 +19,7 @@ const icons = {
   NoDataIcon,
   NoTeamImageDota,
   NoTeamImageCsGo,
+  MissingIcon
 }
 
 export default icons
