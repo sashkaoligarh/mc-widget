@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.c9f61e63.css",
-    "main.js": "/static/js/main.104b9138.js",
-    "static/js/787.721d54f7.chunk.js": "/static/js/787.721d54f7.chunk.js",
-    "static/media/oops.svg": "/static/media/oops.f9198e7926046fb3ea4703600215b375.svg",
-    "static/media/Logo-DOTA_big.svg": "/static/media/Logo-DOTA_big.61856ac9d684c1adf8d4b396237c0b74.svg",
-    "static/media/Logo-CSGO_big.svg": "/static/media/Logo-CSGO_big.b84392f07486d81f6505adaddfe817f4.svg",
-    "static/media/Logo-Maincast.svg": "/static/media/Logo-Maincast.4eac7430b43ed2f8c6fb7251122638ad.svg",
-    "static/media/Icon-vs.svg": "/static/media/Icon-vs.db48ed858f2eba0af25fe4d9b9e7141f.svg",
-    "index.html": "/index.html",
-    "static/media/Icon-Close.svg": "/static/media/Icon-Close.dfe02e3b0e2baa84006b22156dcd0daa.svg",
-    "static/media/Icon-arrow_right.svg": "/static/media/Icon-arrow_right.1c379118ff9c6b37109497b903bced2b.svg",
-    "static/media/IconUp.svg": "/static/media/IconUp.771af682e53b54fcbc9b20a2821750b0.svg",
-    "static/media/IconDown.svg": "/static/media/IconDown.53c5e6b9360f70f2f9a30faecf9a71ab.svg",
-    "static/media/missingTeam.svg": "/static/media/missingTeam.189979c93c4fe0886558c0e4c83331e7.svg",
-    "main.c9f61e63.css.map": "/static/css/main.c9f61e63.css.map",
-    "main.104b9138.js.map": "/static/js/main.104b9138.js.map",
-    "787.721d54f7.chunk.js.map": "/static/js/787.721d54f7.chunk.js.map"
+    "main.css": "/mc-widget/static/css/main.c9f61e63.css",
+    "main.js": "/mc-widget/static/js/main.2b3b6465.js",
+    "static/js/787.721d54f7.chunk.js": "/mc-widget/static/js/787.721d54f7.chunk.js",
+    "static/media/oops.svg": "/mc-widget/static/media/oops.f9198e7926046fb3ea4703600215b375.svg",
+    "static/media/Logo-DOTA_big.svg": "/mc-widget/static/media/Logo-DOTA_big.61856ac9d684c1adf8d4b396237c0b74.svg",
+    "static/media/Logo-CSGO_big.svg": "/mc-widget/static/media/Logo-CSGO_big.b84392f07486d81f6505adaddfe817f4.svg",
+    "static/media/Logo-Maincast.svg": "/mc-widget/static/media/Logo-Maincast.4eac7430b43ed2f8c6fb7251122638ad.svg",
+    "static/media/Icon-vs.svg": "/mc-widget/static/media/Icon-vs.db48ed858f2eba0af25fe4d9b9e7141f.svg",
+    "index.html": "/mc-widget/index.html",
+    "static/media/Icon-Close.svg": "/mc-widget/static/media/Icon-Close.dfe02e3b0e2baa84006b22156dcd0daa.svg",
+    "static/media/Icon-arrow_right.svg": "/mc-widget/static/media/Icon-arrow_right.1c379118ff9c6b37109497b903bced2b.svg",
+    "static/media/IconUp.svg": "/mc-widget/static/media/IconUp.771af682e53b54fcbc9b20a2821750b0.svg",
+    "static/media/IconDown.svg": "/mc-widget/static/media/IconDown.53c5e6b9360f70f2f9a30faecf9a71ab.svg",
+    "static/media/missingTeam.svg": "/mc-widget/static/media/missingTeam.189979c93c4fe0886558c0e4c83331e7.svg",
+    "main.c9f61e63.css.map": "/mc-widget/static/css/main.c9f61e63.css.map",
+    "main.2b3b6465.js.map": "/mc-widget/static/js/main.2b3b6465.js.map",
+    "787.721d54f7.chunk.js.map": "/mc-widget/static/js/787.721d54f7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c9f61e63.css",
-    "static/js/main.104b9138.js"
+    "static/js/main.2b3b6465.js"
   ]
 }
