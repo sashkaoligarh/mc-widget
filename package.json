@@ -1,6 +1,7 @@
 {
   "name": "mc-twich-plugin",
   "version": "0.1.0",
+  "homepage": "https://sashkaoligarh.github.io/mc-widget/",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.1",
@@ -27,9 +28,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "serve -s build",
-    "dev": "react-scripts start",
-    "heroku-postbuild": "npm run build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -55,6 +56,7 @@
   "devDependencies": {
     "@types/humanize-duration": "^3.27.1",
     "@types/luxon": "^3.1.0",
-    "@types/styled-components": "^5.1.26"
+    "@types/styled-components": "^5.1.26",
+    "gh-pages": "^4.0.0"
   }
 }
