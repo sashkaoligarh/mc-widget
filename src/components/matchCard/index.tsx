@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react'
+import { FC } from 'react'
 import { useSelector } from 'react-redux'
 import { timeConverterMMHHMM } from '../../functions'
 import { useCountdown } from '../../functions/useCountDown'
@@ -20,7 +20,6 @@ import {
   DashImg
 } from './styles'
 import { DateTime, Interval } from "luxon";
-import humanizeDuration from "humanize-duration"
 import TeamLogo from '../teamLogo'
 
 type CardProps = {

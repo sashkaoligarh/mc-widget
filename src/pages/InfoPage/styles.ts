@@ -9,7 +9,8 @@ export const Container = styled.div`
   border-radius: 0px 0px 8px 8px;
   background-color: ${({theme}) => theme.palette.surface.background};
   height:calc(100vh - 149px);
-  width: 100%;
+  width: 476px;
+  height: 736px;
   overflow-y: scroll;
   overflow-x: hidden;
   ::-webkit-scrollbar {

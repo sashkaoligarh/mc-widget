@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { FC, useState } from 'react';
 import {MatchCard} from '../../components'
 import {
   MatchesWrapper,
@@ -16,8 +16,11 @@ import icons from '../../images';
 import { DateTime, Interval } from "luxon";
 import humanizeDuration from "humanize-duration"
 
-const MatchesList = () => {
-  const [loading, setLoading] = useState<boolean>(false)
+type ListProps = {
+  loading:boolean,
+}
+
+const MatchesList:FC<ListProps> = ({loading}) => {
   const matches = useSelector((state:RootState) => state.matchesData.matches) 
 
   const differenceMonth = (item1:any, item2:any) => {

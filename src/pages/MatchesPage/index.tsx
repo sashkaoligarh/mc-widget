@@ -1,4 +1,4 @@
-import React, {useEffect, FC} from 'react';
+import React, {useEffect, FC, useState} from 'react';
 import {
   Container,
   FilterWrapper,
@@ -15,6 +15,7 @@ import getMatchesWithFilter from '../../api/matchesService';
 
 const MatchesPage:FC = () => {
   const dispatch = useDispatch()
+  const [loading, setLoading] = useState<boolean>(true)
   const [stages, setStages] = useQueryParam('stages', StringParam);
   const [division, setDivision] = useQueryParam('division', StringParam);
   const [filter, setFilter] = useQueryParam('filter', StringParam);
@@ -38,7 +39,9 @@ const MatchesPage:FC = () => {
       .catch((e) => {
         console.log('error get matches', e);
       })
-      
+      .finally(() => {
+        setLoading(false)
+      })
     }
   },[stages, filter])
 
@@ -76,7 +79,7 @@ const MatchesPage:FC = () => {
           />
         ))}
       </NavWrapper>
-      <MatchesList/>
+      <MatchesList loading={loading}/>
     </Container>
   );
 }

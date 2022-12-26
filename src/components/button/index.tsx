@@ -1,11 +1,10 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
 import {Button} from './styles'
 import Typography from '../typography'
 
 type ButtonProps = {
   title:string,
   onClick:() => void;
-  withArrow?:boolean;
   isIcon?:boolean;
   active:boolean;
 }
@@ -14,7 +13,6 @@ const ButtonIcon:FC<ButtonProps> = (props) => {
   const {
     title,
     onClick,
-    withArrow,
     isIcon,
     active
   } = props

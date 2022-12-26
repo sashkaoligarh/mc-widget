@@ -5,11 +5,14 @@ export const Container = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  padding:24px;
+  padding:${({theme}) => theme.spacing.big};
   border-radius: 0px 0px 8px 8px;
   background-color: ${({theme}) => theme.palette.surface.background};
-  height:calc(100vh - 149px);
-  width: 100%;
+  /* height: 100%;
+  width: calc((476 / 1920) * 100vw);
+  height: calc((884 / 1080) * 100vh); */
+  width: 476px;
+  height: 736px;
   overflow-y: scroll;
   overflow-x: hidden;
   ::-webkit-scrollbar {

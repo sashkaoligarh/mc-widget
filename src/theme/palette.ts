@@ -1,4 +1,4 @@
-export default {
+const palette = {
   primary: {
     enabled: '#EE2737',
     hovered: '#FF4554',
@@ -19,3 +19,4 @@ export default {
   error:'#FC4F41',
   success: '#43FF8A',
 }
+export default palette

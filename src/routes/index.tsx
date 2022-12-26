@@ -7,6 +7,7 @@ import { InfoPage, MatchesPage } from '../pages';
 const RootNavigator:FC = () => {
   return (
     <Routes>
+      <Route path="/mc-widget" element={<Navigate replace to="/matches" />} />
       <Route path="/" element={<Navigate replace to="/matches" />} />
       <Route path="/info_stages" element={<InfoPage />}></Route>
       <Route path="/matches" element={<MatchesPage />}></Route>

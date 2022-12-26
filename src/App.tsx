@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './App.css';
 import {theme} from './theme/index';
 import {Header} from './components';
@@ -15,12 +15,52 @@ import {
 import RootNavigator from './routes';
 import { QueryParamProvider } from 'use-query-params';
 import { ReactRouter6Adapter } from 'use-query-params/adapters/react-router-6';
-import matches from './api/matchesService'
+import styled from 'styled-components'
 
 
+type Props = {
+  scale?:any,
+  height?:any,
+  width?:any,
+}
+const StyledRoot = styled.div<Props>`
+  box-sizing: border-box;
+  width:100vw;
+  height: 100%;
+  position: relative;
+  background: rgba(175, 33, 33, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding-right:7.91665vw;
+`
 function App() {
-
   const dispatch = useDispatch()
+  const width = window.outerWidth
+  const height = window.outerHeight
+  const rootRef:any = useRef()
+  const [scale, setScale] = useState<number>()
+  const [loading, setLoading] = useState<boolean>(true)
+  const updateSize = () => {
+    const scaled = Math.min(
+      rootRef.current.getBoundingClientRect().width / width,    
+      rootRef.current.getBoundingClientRect().height / height
+    )
+    setScale(scaled)
+    setLoading(false)
+   };
+   
+  useEffect(() => {
+    window.addEventListener('resize', updateSize);
+    return () => {
+      window.addEventListener('resize', updateSize);
+    };
+  },[]);
+  useEffect(() => {
+    updateSize()
+  },[]);
+  
   useEffect(() => {
     dispatch(setTeams(addData.teams))
     dispatch(setPages(addData.pages))
@@ -28,14 +68,21 @@ function App() {
     dispatch(setStages(addData.stages))
     dispatch(setTournament(addData.tournament))
   }, [])
-
+  if(loading) return <StyledRoot ref={rootRef}></StyledRoot>
   return (
-    <QueryParamProvider adapter={ReactRouter6Adapter}>
-      <ThemeProvider theme={theme}>
-        <Header/>
-        <RootNavigator/>
-      </ThemeProvider>
-    </QueryParamProvider>
+    <StyledRoot ref={rootRef}>
+      <div 
+        style={{transform :`scale(${scale})`}}
+        className='spec'
+      >
+        <QueryParamProvider adapter={ReactRouter6Adapter}>
+          <ThemeProvider theme={theme}>
+              <Header/>
+              <RootNavigator/>
+          </ThemeProvider>
+        </QueryParamProvider>
+      </div>
+    </StyledRoot>
   );
 }
 
